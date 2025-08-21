@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Barber Shop en Colonia del Sacramento. Cortes de pelo, estética de barba y reservas online." />
+    <link rel="stylesheet" href="style.css" />
+    <title>Barber Shop - Colonia del Sacramento</title>
+
+    <!-- JS de la app -->
+    <script src="js/init.js" defer></script>
+  </head>
+
+  <body data-whatsapp="59899123456">
+    <header class="brand">
+      <button id="themeToggle" class="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">🌙</button>
+        <img src="img/logoBarber.png" alt="Logo de la barbería" width="120" height="120" />
+      <h1>Barber Shop</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
+      </p>
+    </header>
+
+    <!-- Servicios -->
+    <section class="services" id="services">
+      <h2>Nuestros servicios</h2>
+
+      <div class="services-grid">
+        <article class="card">
+          <header>
+            <h3>Corte clásico</h3>
+            <span class="price">$450</span>
+          </header>
+          <p>Perfilado a tijera y máquina. Asesoría de estilo.</p>
+          <ul class="meta">
+            <li>⏱ 30 min</li>
+            <li>✔ Incluye styling</li>
+          </ul>
+          <button class="btn btn-reservar">Reservar</button>
+        </article>
+
+        <article class="card">
+          <header>
+            <h3>Barba & contornos</h3>
+            <span class="price">$350</span>
+          </header>
+          <p>Afeitado con navaja, toalla caliente y finish.</p>
+          <ul class="meta">
+            <li>⏱ 25 min</li>
+            <li>✔ Toalla caliente</li>
+          </ul>
+          <button class="btn btn-reservar">Reservar</button>
+        </article>
+
+        <article class="card">
+          <header>
+            <h3>Combo corte + barba</h3>
+            <span class="price">$700</span>
+          </header>
+          <p>El paquete más pedido. Ideal para renovar look completo.</p>
+          <ul class="meta">
+            <li>⏱ 50 min</li>
+            <li>✔ Styling + contornos</li>
+          </ul>
+          <button class="btn btn-reservar">Reservar</button>
+        </article>
+
+        <article class="card">
+          <header>
+            <h3>Afeitado tradicional</h3>
+            <span class="price">$400</span>
+          </header>
+          <p>Espuma, brocha y navaja. Ritual clásico.</p>
+          <ul class="meta">
+            <li>⏱ 30 min</li>
+            <li>✔ Aftershave</li>
+          </ul>
+          <button class="btn btn-reservar">Reservar</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Horarios y ubicación -->
+    <section class="hours-location" id="ubicacion">
+      <h2>Horarios y ubicación</h2>
+
+      <div class="hl-grid">
+        <!-- Horarios -->
+        <article class="card hours">
+          <h3>Horarios de atención</h3>
+          <table class="hours-table" aria-label="Horarios de atención">
+            <tbody>
+              <tr data-day="1"><th>Lunes</th><td><time>10:00–13:00</time> / <time>15:00–19:00</time></td></tr>
+              <tr data-day="2"><th>Martes</th><td><time>10:00–13:00</time> / <time>15:00–19:00</time></td></tr>
+              <tr data-day="3"><th>Miércoles</th><td><time>10:00–13:00</time> / <time>15:00–19:00</time></td></tr>
+              <tr data-day="4"><th>Jueves</th><td><time>10:00–13:00</time> / <time>15:00–19:00</time></td></tr>
+              <tr data-day="5"><th>Viernes</th><td><time>10:00–13:00</time> / <time>15:00–19:00</time></td></tr>
+              <tr data-day="6"><th>Sábado</th><td><time>10:00–14:00</time></td></tr>
+              <tr data-day="0"><th>Domingo</th><td>Cerrado</td></tr>
+            </tbody>
+          </table>
+          <p class="note">Sujeto a disponibilidad. Recomendamos reservar turno.</p>
+        </article>
+
+        <!-- Ubicación -->
+        <article class="card location">
+          <h3>¿Dónde estamos?</h3>
+          <address>
+            Av. Ejemplo 1234<br />
+            Colonia del Sacramento, Uruguay<br />
+            Tel: <a href="tel:+59899123456">+598 99 123 456</a>
+          </address>
+
+          <div class="map-wrap">
+            <iframe
+              title="Mapa de ubicación"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Av.%20Ejemplo%201234,%20Colonia%20del%20Sacramento,%20Uruguay&output=embed">
+            </iframe>
+          </div>
+
+          <p style="margin-top:.5rem">
+            <a target="_blank" rel="noopener"
+               href="https://www.google.com/maps/search/?api=1&query=Av.+Ejemplo+1234,+Colonia+del+Sacramento,+Uruguay">
+              Abrir en Google Maps
+            </a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a
+      href="https://wa.me/59899123456?text=Hola%20Barber%20Shop,%20quiero%20reservar%20un%20turno"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chatear por WhatsApp">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M19.1 17.4c-.3-.2-.8-.4-1.1-.3-.3.1-.5.6-.7.8-.2.3-.5.3-.8.2-1.1-.4-2.1-1.1-2.8-2-.2-.3-.3-.6-.1-.9.1-.2.3-.3.4-.5.1-.1.2-.3.2-.5 0-.2-.1-.5-.2-.7-.1-.2-.6-1.5-.8-1.9-.2-.4-.5-.4-.8-.4h-.7c-.2 0-.5.1-.7.3-.8.8-1.2 1.9-1.1 3 .1 1 .6 1.9 1.3 2.7 1.5 1.8 3.5 3 5.8 3.5.7.2 1.4.2 2.1.1.7-.1 1.4-.5 1.9-1.1.2-.3.4-.6.5-.9.1-.3 0-.7-.3-.9l-.2-.1zM16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.8 6.5L3 29l6.7-1.7C11.7 28.6 13.8 29 16 29c7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.5c-2 0-3.9-.5-5.6-1.6l-.4-.2-4 .9.9-3.9-.2-.4C5.6 19.6 5 17.8 5 16c0-6.1 4.9-11 11-11s11 4.9 11 11-4.9 11-11 11z"/>
+      </svg>
+    </a>
+
+    <!-- Modal de Reserva -->
+    <div class="modal" id="bookingModal" aria-hidden="true">
+      <div class="modal-dialog card">
+        <button class="modal-close" aria-label="Cerrar">×</button>
+        <h3>Reservar turno</h3>
+
+        <form id="bookingForm">
+          <label>Servicio
+            <input type="text" id="bkServicio" readonly />
+          </label>
+
+          <label>Barbero
+            <select id="bkBarbero" required>
+              <option value="" disabled selected>Elegí un barbero</option>
+              <option value="Nico">Nico</option>
+              <option value="Seba">Seba</option>
+              <option value="Leo">Leo</option>
+            </select>
+          </label>
+
+          <label>Fecha y hora
+            <input type="datetime-local" id="bkFechaHora" required />
+          </label>
+
+          <label>Nombre
+            <input type="text" id="bkNombre" required />
+          </label>
+
+          <label>Teléfono
+            <input type="tel" id="bkTelefono" required />
+          </label>
+
+          <button type="submit" class="btn">Confirmar reserva</button>
+        </form>
+      </div>
+      <div class="modal-backdrop"></div>
+    </div>
+  </body>
+</html>

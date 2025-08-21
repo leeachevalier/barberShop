@@ -1,0 +1,202 @@
+/* =======================
+   Paleta y temas
+======================= */
+:root {
+  --bg:        #f7f6f3;
+  --surface:   #ffffff;
+  --surface-2: #efede9;
+  --text:      #141414;
+  --muted:     #6b7280;
+  --border:    #e7e5e4;
+  --primary:   #111111;
+  --accent:    #cba35a;
+  --success:   #25D366;
+  --shadow:    0 8px 20px rgba(0,0,0,.06);
+
+  /* controles */
+  --link:      var(--primary);
+  --btn-bg:    var(--primary);
+  --btn-text:  #ffffff;
+}
+
+html[data-theme="dark"] {
+  --bg:        #0f1115;
+  --surface:   #16181d;
+  --surface-2: #1e2127;
+  --text:      #f5f5f5;
+  --muted:     #a1a1aa;
+  --border:    #2a2d34;
+  --primary:   #f5f5f5;
+  --accent:    #d4b26a;
+  --shadow:    0 12px 30px rgba(0,0,0,.35);
+
+  /* controles en oscuro */
+  --link:      var(--accent);
+  --btn-bg:    var(--accent);
+  --btn-text:  #141414;
+}
+
+/* =======================
+   Base
+======================= */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { max-width: 100%; display: block; }
+a  { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* =======================
+   Brand / encabezado
+======================= */
+.brand { text-align: center; padding: 3rem 1rem 2rem; }
+.brand img { width: 120px; margin: 0 auto 1rem; }
+h1 { margin: .5rem 0 0; font-size: 2rem; }
+p  { max-width: 60ch; margin: .5rem auto 0; font-size: 1rem; color: var(--muted); }
+
+/* =======================
+   Servicios
+======================= */
+.services { padding: 3rem 1rem; max-width: 1100px; margin: 0 auto; }
+.services h2 { text-align: center; margin-bottom: 1.5rem; font-size: 2rem; }
+
+.services-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem;
+  transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
+  box-shadow: var(--shadow);
+}
+.card:hover { transform: translateY(-2px); }
+
+.card header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: .5rem; margin-bottom: .5rem;
+}
+.card h3 { margin: 0; font-size: 1.15rem; }
+.price { font-weight: 700; color: var(--accent); }
+.card p { margin: .25rem 0 .75rem; color: var(--muted); }
+
+.meta {
+  list-style: none; padding: 0; margin: 0 0 1rem;
+  display: flex; flex-wrap: wrap; gap: .5rem 1rem; color: var(--muted);
+  font-size: .95rem;
+}
+
+.btn {
+  width: 100%; padding: .65rem .9rem; border: 0; border-radius: 10px;
+  background: var(--btn-bg); color: var(--btn-text);
+  font-weight: 600; cursor: pointer;
+  transition: opacity .15s ease, transform .15s ease;
+}
+.btn:hover { opacity:.92; }
+.btn:active { transform: translateY(1px); }
+
+.btn.outline {
+  background: transparent;
+  color: var(--btn-bg);
+  border: 2px solid var(--btn-bg);
+}
+
+/* =======================
+   Horarios y ubicación
+======================= */
+.hours-location { padding: 3rem 1rem; max-width: 1100px; margin: 0 auto; }
+.hours-location h2 { text-align: center; margin-bottom: 1.5rem; font-size: 2rem; }
+
+.hl-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 820px) { .hl-grid { grid-template-columns: 1fr 1fr; } }
+
+.hours h3, .location h3 { margin-top: 0; }
+
+.hours-table { width: 100%; border-collapse: collapse; font-size: .98rem; }
+.hours-table th, .hours-table td {
+  padding: .6rem .4rem; border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.hours-table th { width: 38%; font-weight: 700; }
+.hours-table tr.today th, .hours-table tr.today td { background: var(--surface-2); }
+
+.note { margin-top: .75rem; color: var(--muted); font-size: .95rem; }
+
+address { font-style: normal; line-height: 1.6; margin-bottom: .75rem; }
+
+.map-wrap {
+  aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
+}
+.map-wrap iframe { width: 100%; height: 100%; border: 0; }
+
+/* =======================
+   WhatsApp flotante
+======================= */
+.whatsapp-float {
+  position: fixed; right: 18px; bottom: 18px;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--success);
+  display: grid; place-items: center;
+  box-shadow: 0 12px 24px rgba(0,0,0,.18);
+  z-index: 9999;
+  transition: transform .15s ease, box-shadow .15s ease, opacity .2s ease;
+}
+.whatsapp-float:hover { transform: translateY(-2px); box-shadow: 0 16px 30px rgba(0,0,0,.22); }
+.whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+@media print { .whatsapp-float { display: none; } }
+
+/* =======================
+   Modal
+======================= */
+.modal { position: fixed; inset: 0; display: none; }
+.modal.open { display: grid; place-items: center; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.45); }
+.modal-dialog {
+  position: relative; z-index: 1;
+  width: min(560px, 92vw);
+  padding: 1rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+.modal-dialog h3 { margin-top: 0; }
+.modal-dialog label { display: grid; gap: .35rem; margin: .5rem 0; font-size: .95rem; }
+.modal-dialog input, .modal-dialog select {
+  padding: .6rem .7rem; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--surface); color: var(--text);
+}
+.modal-close {
+  position: absolute; right: .6rem; top: .4rem;
+  border: 0; background: transparent; font-size: 1.5rem; cursor: pointer; color: var(--text);
+}
+
+/* =======================
+   Toggle de tema (botón)
+======================= */
+.theme-toggle{
+  position: absolute; right: 1rem; top: 1rem;
+  width: 42px; height: 42px; border-radius: 999px;
+  display:grid; place-items:center; cursor:pointer;
+  border: 1px solid var(--border); background: var(--surface);
+  box-shadow: var(--shadow); font-size: 18px; color: var(--text);
+}
+.theme-toggle:hover { transform: translateY(-1px); }
+
+
